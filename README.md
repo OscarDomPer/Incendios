@@ -31,6 +31,7 @@
 
 <br>
 <div align="center">
+  
 |                                  |                                  |
 |----------------------------------|----------------------------------|
 | ![firms](https://github.com/OscarDomPer/Incendios/blob/main/Im%C3%A1genes/firms.png?raw=true) | ![meteogalicia](https://github.com/OscarDomPer/Incendios/blob/main/Im%C3%A1genes/meteogalicia.png?raw=true) |
