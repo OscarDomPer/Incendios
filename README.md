@@ -68,6 +68,28 @@ https://github.com/OscarDomPer/Incendios/blob/main/000.Creacion_Data_Incendios_G
 https://github.com/OscarDomPer/Incendios/blob/main/000.Creacion_Data_NO_Incendios_Galicia.ipynb
 https://github.com/OscarDomPer/Incendios/blob/main/001.Union_y_ajustes_DataSet_Incendios_Galicia.ipynb
 
+<br>
+<br>
+
+------------
+<h2>
+  
+## Análisis Exploratorio de los datos
+
+<br>
+
+<div align="center">
+  
+<img src="https://github.com/OscarDomPer/Incendios/blob/main/Im%C3%A1genes/correlacion.png?raw=true" width="80%">
+
+  
+</div>
+<br>
+Una vez realizados los ajustes básicos(sustitución de datos faltantes utilizando k-nearest neighbors, eliminación de outliers), al calcular la matriz de correlación para las variables numéricas de nuestro dataset, encontramos una correlación casi perfecta con algunos datos satelitales, como “Brightness” o “Scan”. Esta alta correlación se debe a que el satélite en sí actúa como un sistema de detección de incendios. Así que optamos por eliminarlos. 
+
+
+
+
 
 
 
