@@ -46,9 +46,6 @@ que proporciona datos satelitales, reuniendo datos de incendios en España perte
 Las variables climáticas se descargaron del servicio metereológico gallego 
 [MeteoGalicia](https://www.meteogalicia.gal/web/home)
 
-br>
-<br>
-<br>
 <br>
 <br>
 
@@ -62,6 +59,8 @@ Selecionamos 16 estaciones meteorológicas en Galicia, cuatro por provincia. El 
 Para la recopilación de datos sobre incendios, empleamos un proceso de localización inversa, identificando así los incendios ocurridos en Galicia. Luego, asociamos a cada incendio los datos climáticos registrados por la estación meteorológica más cercana en la fecha del evento. 
 
 Finalmente, al tratarse de un problema de clasificación, generamos filas negativas en el dataset. Utilizamos la librería 'random' para crear coordenadas y fechas aleatorias dentro de nuestros límites temporales y territoriales. A estas coordenadas, les adjuntamos los datos climáticos correspondientes de la estación meteorológica más cercana.
+
+
 
 
 
