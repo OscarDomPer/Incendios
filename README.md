@@ -31,7 +31,8 @@
 
 <br>
 <div align="center">
-
-  <img src="https://github.com/OscarDomPer/Cine_Esp/blob/main/Cine_Espa%C3%B1ol/Im%C3%A1genes/pict1.png?raw=true" width="80%">
+|                                  |                                  |
+|----------------------------------|----------------------------------|
+| ![firms](https://github.com/OscarDomPer/Incendios/blob/main/Im%C3%A1genes/firms.png?raw=true) | ![meteogalicia](https://github.com/OscarDomPer/Incendios/blob/main/Im%C3%A1genes/meteogalicia.png?raw=true) |
   
 </div>
