@@ -42,10 +42,8 @@
 Para generar un dataset completo necesitábamos por un lado, un registro de incendios en Galicia y por otro conocer las condiciones climáticas en las que se dió cada incendio. 
 Los incendios los obtuvimos de la plataforma de la NASA 
 [firms](https://firms.modaps.eosdis.nasa.gov/) 
-
 que proporciona datos satelitales, reuniendo datos de incendios en España pertenecientes a los últimos 15 años.
 Las variables climáticas se descargaron del servicio metereológico gallego 
-
 [MeteoGalicia](https://www.meteogalicia.gal/web/home)
 
 br>
