@@ -46,7 +46,7 @@ que proporciona datos satelitales, reuniendo datos de incendios en España perte
 Las variables climáticas se descargaron del servicio metereológico gallego 
 [MeteoGalicia](https://www.meteogalicia.gal/web/home)
 
-
+<br>
 <br>
 <br>
 
@@ -85,9 +85,10 @@ https://github.com/OscarDomPer/Incendios/blob/main/001.Union_y_ajustes_DataSet_I
   
 </div>
 Una vez realizados los ajustes básicos(sustitución de datos faltantes utilizando k-nearest neighbors, eliminación de outliers), al calcular la matriz de correlación para las variables numéricas de nuestro dataset, encontramos una correlación casi perfecta con algunos datos satelitales, como “Brightness” o “Scan”. Esta alta correlación se debe a que el satélite en sí actúa como un sistema de detección de incendios. Así que optamos por eliminarlos. 
-<br>
-<br>
 
+<br>
+<br>
+<br>
 <div align="center">
 
   <img src="https://github.com/OscarDomPer/Incendios/blob/main/Im%C3%A1genes/EDA.png?raw=true" width="100%">
@@ -95,13 +96,9 @@ Una vez realizados los ajustes básicos(sustitución de datos faltantes utilizan
 </div>
 
 Gráfica 1: Distribución Mensual de Incendios en cada Año. Se observa una mayor frecuencia en los meses de más calor, como era de esperar.
-
 <br>
-
 Gráfica 2: Incendios Según la Hora del Día. Muestra una distribución inusual, debido a que los datos son recogidos por satélites de órbita corta que pasan varias veces al día por el mismo punto.
-
 <br>
-
 Gráfica 3: Comparativa de Variables Climáticas.C omparando la media de variables climáticas durante eventos de incendio y no incendio, como era de esperar,  el viento y la temperatura elevada están asociados con la ocurrencia de incendios, mientras que una mayor humedad, en todas sus formas, se relaciona con una menor frecuencia de estos eventos. 
 
 
