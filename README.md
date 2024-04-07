@@ -33,7 +33,7 @@
 
 <div align="center">
   
-<img src="https://github.com/OscarDomPer/Incendios/blob/main/Im%C3%A1genes/obte_dat.png?raw=true" width="60%">
+<img src="https://github.com/OscarDomPer/Incendios/blob/main/Im%C3%A1genes/obte_dat.png?raw=true" width="80%">
 
   
 </div>
