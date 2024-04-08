@@ -99,7 +99,44 @@ Gráfica 1: Distribución Mensual de Incendios en cada Año. Se observa una mayo
 <br>
 Gráfica 2: Incendios Según la Hora del Día. Muestra una distribución inusual, debido a que los datos son recogidos por satélites de órbita corta que pasan varias veces al día por el mismo punto.
 <br>
-Gráfica 3: Comparativa de Variables Climáticas.C omparando la media de variables climáticas durante eventos de incendio y no incendio, como era de esperar,  el viento y la temperatura elevada están asociados con la ocurrencia de incendios, mientras que una mayor humedad, en todas sus formas, se relaciona con una menor frecuencia de estos eventos. 
+Gráfica 3: Comparativa de Variables Climáticas. Al comparar la media de variables climáticas durante eventos de incendio y no incendio, como era de esperar,  el viento y la temperatura elevada están asociados con la ocurrencia de incendios, mientras que una mayor humedad, en todas sus formas, se relaciona con una menor frecuencia de estos eventos. 
+
+<br>
+<br>
+
+------------
+<h2>
+  
+## Desarrollo del modelo de Machine Learning
+
+<br>
+
+<div align="center">
+  
+<img src="https://github.com/OscarDomPer/Incendios/blob/main/Im%C3%A1genes/modelos.png?raw=true" width="80%">
+
+  
+</div>
+Entrenamos los modelo de Machine Learning más comunes y evaluamos su desempeño con el conjunto de prueba. Los resultados fueron en general buenos, aunque los modelos basados en árboles de decisión presentaban un sobreajuste inaceptable. 
+Decidimos centrarnos en Gradient Boosting y AdaBoost, al tener estos las mejores métricas.
+
+<br>
+
+<div align="center">
+  
+<img src="https://github.com/OscarDomPer/Incendios/blob/main/Im%C3%A1genes/tuning.png?raw=true" width="50%">
+
+  
+</div>
+La mejora de los hiperparámetros para los modelos GradientBoostingClassifier y AdaBoostClassifier se llevó a cabo mediante GridSearchCV. 
+Para el GradientBoostingClassifier, ajustamos hiperparámetros  como el número de estimadores, la tasa de aprendizaje y la profundidad máxima de los árboles. El mejor conjunto de hiperparámetros se validó utilizando la métrica ROC-AUC en el conjunto de prueba. Con el AdaBoostClassifier, también optimizamos el número de estimadores y la tasa de aprendizaje, evaluando el mejor modelo con la misma métrica ROC-AUC.
+
+<br>
+
+En el caso del GradientBoostingClasiffier la mejora tras la hiperparametrización
+ha sido notable, pasando de un  ROC-AUC de 0,81 a 0,85.
+
+
 
 
 
