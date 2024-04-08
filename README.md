@@ -119,12 +119,12 @@ Gráfica 3: Comparativa de Variables Climáticas. Al comparar la media de variab
 </div>
 Entrenamos los modelo de Machine Learning más comunes y evaluamos su desempeño con el conjunto de prueba. Los resultados fueron en general buenos, aunque los modelos basados en árboles de decisión presentaban un sobreajuste inaceptable. 
 Decidimos centrarnos en Gradient Boosting y AdaBoost, al tener estos las mejores métricas.
-
+<br>
 <br>
 
 <div align="center">
   
-<img src="https://github.com/OscarDomPer/Incendios/blob/main/Im%C3%A1genes/tuning.png?raw=true" width="50%">
+<img src="https://github.com/OscarDomPer/Incendios/blob/main/Im%C3%A1genes/tuning.png?raw=true" width="70%">
 
   
 </div>
@@ -136,7 +136,35 @@ Para el GradientBoostingClassifier, ajustamos hiperparámetros  como el número 
 En el caso del GradientBoostingClasiffier la mejora tras la hiperparametrización
 ha sido notable, pasando de un  ROC-AUC de 0,81 a 0,85.
 
+<br>
+<br>
+<br>
+<div align="center">
 
+  <img src="https://github.com/OscarDomPer/Incendios/blob/main/Im%C3%A1genes/importances.png?raw=true" width="100%">
+  
+</div>
+
+Los resultados obtenidosal calcular "Feature Importance" validan nuestra decisión inicial de seleccionar estaciones meteorológicas que registran la humedad del suelo y foliar, ya que estas variables se revelaron esenciales para optimizar el rendimiento de los modelos.
+
+Resulta interesante destacar la relativa menor relevancia de la variable 'viento' en nuestros modelos. Una posible explicación para esto podría ser que, aunque un viento fuerte es un factor crítico para la propagación de incendios, la intensidad del viento tiende a incrementarse significativamente durante eventos extremos o temporales.
+<br>
+<br>
+
+------------
+<h2>
+  
+## Validación en el conjunto de datos reservado
+
+<br>
+
+<div align="center">
+  
+<img src="https://github.com/OscarDomPer/Incendios/blob/main/Im%C3%A1genes/2022.png?raw=true" width="80%">
+
+  
+</div>
+Dado que el objetivo final del proyecto es hacer un sistema de predicción a tiempo real, reservamos del estrenamiento y testeo todos los datos  del año 2022, con el fin de evaluar la capacidad de gerenalizar del modelo. Los resultados fueron más bien decepcionantes, apenas mejorando un modelo dummie en el caso de la detección de positivos.
 
 
 
