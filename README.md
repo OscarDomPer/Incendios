@@ -167,8 +167,10 @@ Resulta interesante destacar la relativa menor relevancia de la variable 'viento
 Dado que el objetivo final del proyecto es hacer un sistema de predicción a tiempo real, reservamos del estrenamiento y testeo todos los datos  del año 2022, con el fin de evaluar la capacidad de gerenalizar del modelo. Los resultados fueron más bien decepcionantes, apenas mejorando un modelo dummie en el caso de la detección de positivos.
 <br>
 De cara a mejorar estos resultados, tomamos dos vías de acción:
-- Por un lado, Al representar los datos en un mapa, pronto nos dimos cuenta que el modelo memorizaba el patrón de coordenadas y lo repetía de forma sistemática sin tener en cuenta otras variables. Así que procedimos a eliminar Longitud y Latitud del entrenamiento.
-- Y por otro decidimos probar a entrenar una red neuronal.
+
+  - Por un lado, Al representar los datos en un mapa, pronto nos dimos cuenta que el modelo memorizaba el patrón de coordenadas y lo repetía de forma sistemática sin tener en cuenta otras variables. Así que procedimos a eliminar Longitud y Latitud del entrenamiento.
+  
+  - Y por otro decidimos probar a entrenar una red neuronal.
 
 
 
