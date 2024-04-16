@@ -145,7 +145,7 @@ ha sido notable, pasando de un  ROC-AUC de 0,81 a 0,85.
   
 </div>
 
-Los resultados obtenidosal calcular "Feature Importance" validan nuestra decisión inicial de seleccionar estaciones meteorológicas que registran la humedad del suelo y foliar, ya que estas variables se revelaron esenciales para optimizar el rendimiento de los modelos.
+Los resultados obtenidos al calcular "Feature Importance" validan nuestra decisión inicial de seleccionar estaciones meteorológicas que registran la humedad del suelo y foliar, ya que estas variables se revelaron esenciales para optimizar el rendimiento de los modelos.
 
 Resulta interesante destacar la relativa menor relevancia de la variable 'viento' en nuestros modelos. Una posible explicación para esto podría ser que, aunque un viento fuerte es un factor crítico para la propagación de incendios, la intensidad del viento tiende a incrementarse significativamente durante eventos extremos o temporales.
 <br>
@@ -300,6 +300,14 @@ El mapa es un jpg que se  sube cada día, generalmente a las 9:45.
 Con las variables climáticas a tiempo real, creamos un dataset con coordenadas aleatorias de forma análoga a lo que hicimos con los datos de un día concreto de nuestro dataset y le pasamos nuestro modelo.
 
 Si nos fijamos en el patrón, no tanto en los colores que obedecen al umbral con el que trabajamos o los rangos de probabilidad que elegimos, observamos cierta consistencia con el índice de la Xunta de Galicia. Lo que nos hace pensar que las decisiones que tomamos a lo largo de todo el proyecto fueron correctas en su mayoría.
+<br>
+<br>
+<br>
+<br>
+
+------------
+<h2>
+
 **Autores:**
 
 - **Carlos Lara** - [Linkedin](https://www.linkedin.com/in/carloslarabarrera/)
