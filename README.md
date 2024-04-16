@@ -172,6 +172,153 @@ De cara a mejorar estos resultados, tomamos dos vías de acción:
   
   - Y por otro decidimos probar a entrenar una red neuronal.
 
+<br>
+<br>
+
+------------
+<h2>
+  
+## NDVI
+
+<br>
+
+<div align="center">
+  
+<img src="https://github.com/OscarDomPer/Incendios/blob/main/Im%C3%A1genes/NDVI2.png?raw=true" width="80%">
+
+  
+</div>
+El problema de este enfoque es que se perdía la información geoespacial del modelo (No habría diferencia entre una gran ciudad o una masa de agua y un bosque). La manera de solucionar esto fue añadiendo una nueva variable que tuviese en cuenta la densidad de vegetación.
+El parámetro que elegimos fue  el NDVI (normalized difference vegetation index), que sin entrar en muchos detalles mide por satélite la cantidad de luz absorbida por la clorofila. 
+Obtuvimos el NDVI del Google Earth Engine que es un visor de datos satelitales con un amplio catálogo de datos. Entre ellos los necesarios para calcularlo.
+<br>
+<br>
+
+------------
+<h2>
+  
+## Red Neuronal
+
+<br>
+
+<div align="center">
+  
+<img src="https://github.com/OscarDomPer/Incendios/blob/main/Im%C3%A1genes/red.png?raw=true" width="80%">
+
+  
+</div>
+De cara a seguir mejorando nuestro proyecto probamos una red neuronal.
+La arquitectura consta de dos capas densas con funciones activación ReLu y regularización L1, destinada a prevenir el sobreajuste. Se utiliza dropout para la regularización durante el entrenamiento. El modelo se compila con el optimizador Adam y la función de pérdida de entropía binaria. Se incorporan los callbaks EarlyStopping y ReduceLRonPlateau para mejorar la generalización y ajustar la tasa de aprendizaje.
+<br>
+<br>
+<br>
+<div align="center">
+
+  <img src="https://github.com/OscarDomPer/Incendios/blob/main/Im%C3%A1genes/hiperp.png?raw=true" width="80%">
+
+</div>
+Para la optimización de los hiperparámetros de la red usamos la web espicializada: Weights & Biases. Los resultados en el conjunto de pruebra no eran malos, pero no mejoraban al modelo anterior. Pero una vez más nuestro objetivo final es un sistema de predicción a tiempo real. Nos interesa que el modelo generalice bien, no que sea muy bueno prediciendo en el conjunto de prueba.
+<br>
+<br>
+<br>
+<div align="center">
+
+  <img src="https://github.com/OscarDomPer/Incendios/blob/main/Im%C3%A1genes/resultados%20red.png?raw=true" width="80%">
+
+</div>
+Para ello pasamos el modelo por los datos del año 2022 que al igual que en el proyecto anterior, habían sido separados del los conjuntos de entrenamiento y prueba.
+Y en este caso el modelo funcionaba incluso mejor pasando de un 77% de nuestro modelo grideado a un 79%
+Es decir el modelo generaliza mejor que ajusta.
+<br>
+<br>
+<br>
+<div align="center">
+
+  <img src="https://github.com/OscarDomPer/Incendios/blob/main/Im%C3%A1genes/comparativa_2.png?raw=true" width="80%">
+
+</div>
+Aquí es donde se ve claramente la gran mejora con respecto al primer modelo.
+Ahora el modelo es capaz de predecir los incendios de 2022 de una forma mucho más eficiente.
+<br>
+<br>
+<br>
+<div align="center">
+
+  <img src="https://github.com/OscarDomPer/Incendios/blob/main/Im%C3%A1genes/comp_inc.png?raw=true" width="80%">
+
+</div>
+En estos mapas se observan los incendios que sucedieron en 2022 frente a los que predice el modelo.
+Nótese que al sistema no se le da ningún tipo de información geoespacial. Sitúa los incendios en base a las demás variables.
+<br>
+<br>
+<br>
+<div align="center">
+
+  <img src="https://github.com/OscarDomPer/Incendios/blob/main/Im%C3%A1genes/mapas5.png?raw=true" width="80%">
+
+</div>
+Distintos tipos de mapas, cada uno proporciona una aproximación distinta y en su conjunto ofrecen una visión general.
+Algunos representan los resultado de predict con un umbral determinado otros  representan la probabilidad de incendio a partir de los datos de predict directamente, la mayoría son interactivos.
+<br>
+<br>
+
+------------
+<h2>
+  
+## Predicción a tiempo real
+<br>
+
+<div align="center">
+  
+<img src="https://github.com/OscarDomPer/Incendios/blob/main/Im%C3%A1genes/realtime.png?raw=true">
+
+  
+</div>
+El fin último y más importante reto de nuestro proyecto, era crear un sistema de predicción de riesgo de incendio a tiempo real.
+Para ello, obviamente, necesitábamos datos a tiempo real de las estaciones metereológicas (otra limitación del sistema anterior es que los datos climáticos eran una media de todo el día).
+Conseguimos acceder a los datos diez-minutales (aunque se suben con un retraso de una hora o dos)) de MeteoGalicia de forma automatizada.
+Una vez descargados los datos, filtramos las estaciones que recojan humedad foliar y humedad de suelo y nos quedamos con las variables que nos interesan.
+<br>
+<br>
+<br>
+<div align="center">
+
+  <img src="https://github.com/OscarDomPer/Incendios/blob/main/Im%C3%A1genes/xunta.png?raw=true" width="80%">
+
+</div>
+Hacia el final de nuestro proyecto descubrimos que la Xunta tiene una herramienta similar a nuestro modelo, no ofrece mucha información acerca de cómo calcula el índice, o las variables que tiene en cuenta, pero nos sirve para compararlo con nuestro sistema.
+
+El mapa es un jpg que se  sube cada día, generalmente a las 9:45. 
+<br>
+<br>
+<br>
+<div align="center">
+
+  <img src="https://github.com/OscarDomPer/Incendios/blob/main/Im%C3%A1genes/xunavsnos.png?raw=true" width="80%">
+
+</div>
+Con las variables climáticas a tiempo real, creamos un dataset con coordenadas aleatorias de forma análoga a lo que hicimos con los datos de un día concreto de nuestro dataset y le pasamos nuestro modelo.
+
+Si nos fijamos en el patrón, no tanto en los colores que obedecen al umbral con el que trabajamos o los rangos de probabilidad que elegimos, observamos cierta consistencia con el índice de la Xunta de Galicia. Lo que nos hace pensar que las decisiones que tomamos a lo largo de todo el proyecto fueron correctas en su mayoría.
+**Autores:**
+
+- **Carlos Lara** - [Linkedin](https://www.linkedin.com/in/carloslarabarrera/)
+- **René Pupo Martínez** - [Linkedin](https://www.linkedin.com/in/rene-pupo-mart%C3%ADnez-a994822a7/)
+- **Juan Pablo Aguilar**
+- **Óscar Dominguez** - [Linkedin](https://www.linkedin.com/in/oscardominguezpereira/)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
