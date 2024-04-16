@@ -283,7 +283,7 @@ Una vez descargados los datos, filtramos las estaciones que recojan humedad foli
 <br>
 <div align="center">
 
-  <img src="https://github.com/OscarDomPer/Incendios/blob/main/Im%C3%A1genes/xunta.png?raw=true" width="80%">
+  <img src="https://github.com/OscarDomPer/Incendios/blob/main/Im%C3%A1genes/mapas5.png?raw=true" width="80%">
 
 </div>
 Hacia el final de nuestro proyecto descubrimos que la Xunta tiene una herramienta similar a nuestro modelo, no ofrece mucha información acerca de cómo calcula el índice, o las variables que tiene en cuenta, pero nos sirve para compararlo con nuestro sistema.
@@ -294,7 +294,7 @@ El mapa es un jpg que se  sube cada día, generalmente a las 9:45.
 <br>
 <div align="center">
 
-  <img src="https://github.com/OscarDomPer/Incendios/blob/main/Im%C3%A1genes/xunavsnos.png?raw=true" width="80%">
+  <img src="https://github.com/OscarDomPer/Incendios/blob/main/Im%C3%A1genes/xunta1.png?raw=true" width="80%">
 
 </div>
 Con las variables climáticas a tiempo real, creamos un dataset con coordenadas aleatorias de forma análoga a lo que hicimos con los datos de un día concreto de nuestro dataset y le pasamos nuestro modelo.
