@@ -29,13 +29,14 @@
   
 ## Introducción
 <br>
+
 El objetivo de este proyecto es crear desde cero un sistema capaz de evaluar a tiempo real el __riesgo de incendios en todo el territorio gallego__. Para ello hemos estructurado el proyecto en tres fases: 
 __Creación del dataset__ donde obtenemos y estructuramos datos de incendios en Galicia en los ultimos 15 años, así como otras variables de interés. 
 Entrenar y evaluar el funcionamiento de un modelo de __Machine Learning__.
 Usar este modelo para hacer predicciones con __datos a tiempo real__.
 
 
-
+******
 ------------
 
 <h2>
