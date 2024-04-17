@@ -117,12 +117,18 @@ Una vez realizados los ajustes básicos(sustitución de datos faltantes utilizan
 
 
 
-_ __Gráfica 2__: Incendios Según la Hora del Día. Muestra una distribución inusual, debido a que los datos son recogidos por satélites de órbita corta que pasan varias veces al día por el mismo punto.
+- __Gráfica 2__: Incendios Según la Hora del Día. Muestra una distribución inusual, debido a que los datos son recogidos por satélites de órbita corta que pasan varias veces al día por el mismo punto.
 
 
 
-_ __Gráfica 3__: Comparativa de Variables Climáticas. Al comparar la media de variables climáticas durante eventos de incendio y no incendio, como era de esperar,  el viento y la temperatura elevada están asociados con la ocurrencia de incendios, mientras que una mayor humedad, en todas sus formas, se relaciona con una menor frecuencia de estos eventos. 
+- __Gráfica 3__: Comparativa de Variables Climáticas. Al comparar la media de variables climáticas durante eventos de incendio y no incendio, como era de esperar,  el viento y la temperatura elevada están asociados con la ocurrencia de incendios, mientras que una mayor humedad, en todas sus formas, se relaciona con una menor frecuencia de estos eventos. 
 
+<br>
+
+El código de este proceso puede consultarse en el notebook:
+https://github.com/OscarDomPer/Incendios/blob/main/002.EDA_datos_Galicia.ipynb
+
+<br>
 <br>
 <br>
 
@@ -167,9 +173,10 @@ ha sido notable, pasando de un  __ROC-AUC de 0,81 a 0,85__.
   
 </div>
 
-Los resultados obtenidos al calcular "Feature Importance" validan nuestra decisión inicial de seleccionar estaciones meteorológicas que registran la humedad del suelo y foliar, ya que estas variables se revelaron esenciales para optimizar el rendimiento de los modelos.
+Los resultados obtenidos al calcular "Feature Importance" validan nuestra decisión inicial de seleccionar estaciones meteorológicas que registran la __humedad del suelo y foliar__, ya que estas variables se revelaron esenciales para optimizar el rendimiento de los modelos.
+Resulta interesante destacar la relativa menor relevancia de la variable 'viento' en nuestros modelos. Una posible explicación para esto podría ser que, aunque un viento fuerte es un factor crítico para la 
+propagación de incendios, la intensidad del viento tiende a incrementarse significativamente durante eventos extremos o temporales.
 
-Resulta interesante destacar la relativa menor relevancia de la variable 'viento' en nuestros modelos. Una posible explicación para esto podría ser que, aunque un viento fuerte es un factor crítico para la propagación de incendios, la intensidad del viento tiende a incrementarse significativamente durante eventos extremos o temporales.
 <br>
 <br>
 
@@ -207,6 +214,7 @@ De cara a mejorar estos resultados, tomamos dos vías de acción:
 
   
 </div>
+
 El problema de eliminar las coordenadas es que se perdía la información geoespacial del modelo (No habría diferencia entre una gran ciudad o una masa de agua y un bosque). La manera de solucionar esto fue añadiendo una nueva variable que tuviese en cuenta la densidad de vegetación.
 El parámetro que elegimos fue  el __NDVI (normalized difference vegetation index)__, que sin entrar en muchos detalles mide por satélite la cantidad de luz absorbida por la clorofila. 
 Obtuvimos el NDVI del __Google Earth Engine__ que es un visor de datos satelitales con un amplio catálogo de datos. Entre ellos los necesarios para calcularlo.
@@ -229,7 +237,7 @@ La arquitectura consta de dos capas densas con funciones activación ReLu y regu
 
 <br>
 <br>
-<br>
+
 <div align="center">
 
   <img src="https://github.com/OscarDomPer/Incendios/blob/main/Im%C3%A1genes/hiperp.png?raw=true" width="80%">
@@ -258,7 +266,7 @@ Es decir el modelo generaliza mejor que ajusta__.
 
 </div>
 Aquí es donde se ve claramente la gran mejora con respecto al primer modelo.
-Ahora el modelo es capaz de predecir los incendios de 2022 de una forma mucho más eficiente.
+__Ahora el modelo es capaz de predecir los incendios de 2022 de una forma mucho más eficiente__.
 <br>
 <br>
 <br>
@@ -282,7 +290,14 @@ Algunos representan los resultado de predict con un umbral determinado otros  re
 <br>
 <br>
 
-
+El código de este proceso puede consultarse en los siguientes notebooks:
+https://github.com/OscarDomPer/Incendios/blob/main/003.Preprocesamiento_y_evaluaciones_con_MODELOS_con_datos_Galicia.ipynb
+https://github.com/OscarDomPer/Incendios/blob/main/005.Probar_Modelo.ipynb
+https://github.com/OscarDomPer/Incendios/blob/main/006.NDVI.ipynb
+<br>
+<br>
+<br>
+<br>
 ***
 ## Predicción a tiempo real
 ****
@@ -327,7 +342,8 @@ Si nos fijamos en el patrón, no tanto en los colores que obedecen al umbral con
 <br>
 <br>
 <br>
-
+El código de este proceso puede consultarse en el siguiente notebook:
+https://github.com/OscarDomPer/Incendios/blob/main/011.Automacizaci%C3%B3n_DATA_Estaciones_Meteorologicas_Galicia.ipynb
 ------------
 <h2>
 
