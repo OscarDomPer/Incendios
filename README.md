@@ -4,8 +4,6 @@
 </div>
 
 <br>
-<br>
-<br>
 <div align="center">
 
   <img src="https://github.com/OscarDomPer/Incendios/blob/main/Im%C3%A1genes/mapa.png?raw=true" width="60%">
@@ -14,6 +12,7 @@
 
 <br>
 <br>
+
 ## Tecnologías usadas
 
 **Lenguaje:** Python.
@@ -43,7 +42,7 @@ Usar este modelo para hacer predicciones con __datos a tiempo real__.
 ## Fase 1: Creación del dataset
 ------------
 
-<h2>
+
   
 ### Obtención de los datos
 
