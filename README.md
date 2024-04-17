@@ -102,9 +102,9 @@ https://github.com/OscarDomPer/Incendios/blob/main/001.Union_y_ajustes_DataSet_I
 
   
 </div>
-Una vez realizados los ajustes básicos(sustitución de datos faltantes utilizando k-nearest neighbors, eliminación de outliers), al calcular la matriz de correlación para las variables numéricas de nuestro dataset, encontramos una correlación casi perfecta con algunos datos satelitales, como “Brightness” o “Scan”. Esta alta correlación se debe a que el satélite en sí actúa como un sistema de detección de incendios. __Así que optamos por eliminarlo__s. 
 
-<br>
+Una vez realizados los ajustes básicos(sustitución de datos faltantes utilizando k-nearest neighbors, eliminación de outliers), al calcular la matriz de correlación para las variables numéricas de nuestro dataset, encontramos una correlación casi perfecta con algunos datos satelitales, como “Brightness” o “Scan”. Esta alta correlación se debe a que el satélite en sí actúa como un sistema de detección de incendios. __Así que optamos por eliminarlos__. 
+
 <br>
 <br>
 <div align="center">
@@ -113,20 +113,22 @@ Una vez realizados los ajustes básicos(sustitución de datos faltantes utilizan
   
 </div>
 
--__Gráfica 1__: Distribución Mensual de Incendios en cada Año. Se observa una mayor frecuencia en los meses de más calor, como era de esperar.
-<br>
--__Gráfica 2__: Incendios Según la Hora del Día. Muestra una distribución inusual, debido a que los datos son recogidos por satélites de órbita corta que pasan varias veces al día por el mismo punto.
-<br>
--__Gráfica 3__: Comparativa de Variables Climáticas. Al comparar la media de variables climáticas durante eventos de incendio y no incendio, como era de esperar,  el viento y la temperatura elevada están asociados con la ocurrencia de incendios, mientras que una mayor humedad, en todas sus formas, se relaciona con una menor frecuencia de estos eventos. 
+- __Gráfica 1__: Distribución Mensual de Incendios en cada Año. Se observa una mayor frecuencia en los meses de más calor, como era de esperar.
+
+
+
+_ __Gráfica 2__: Incendios Según la Hora del Día. Muestra una distribución inusual, debido a que los datos son recogidos por satélites de órbita corta que pasan varias veces al día por el mismo punto.
+
+
+
+_ __Gráfica 3__: Comparativa de Variables Climáticas. Al comparar la media de variables climáticas durante eventos de incendio y no incendio, como era de esperar,  el viento y la temperatura elevada están asociados con la ocurrencia de incendios, mientras que una mayor humedad, en todas sus formas, se relaciona con una menor frecuencia de estos eventos. 
 
 <br>
 <br>
 
 ------------
-<h2>
-  
 ## Desarrollo del modelo de Machine Learning
-
+------------
 <br>
 
 <div align="center">
@@ -135,8 +137,10 @@ Una vez realizados los ajustes básicos(sustitución de datos faltantes utilizan
 
   
 </div>
-Entrenamos los modelo de Machine Learning más comunes y evaluamos su desempeño con el conjunto de prueba. Los resultados fueron en general buenos, aunque los modelos basados en árboles de decisión presentaban un sobreajuste inaceptable. 
-Decidimos centrarnos en Gradient Boosting y AdaBoost, al tener estos las mejores métricas.
+
+Entrenamos los modelo de __Machine Learning más comunes__ y evaluamos su desempeño con el conjunto de prueba. Los resultados fueron en general buenos, aunque los modelos basados en árboles de decisión presentaban un sobreajuste inaceptable. 
+Decidimos centrarnos en __Gradient Boosting y AdaBoost__, al tener estos las mejores métricas.
+
 <br>
 <br>
 
@@ -146,15 +150,15 @@ Decidimos centrarnos en Gradient Boosting y AdaBoost, al tener estos las mejores
 
   
 </div>
-La mejora de los hiperparámetros para los modelos GradientBoostingClassifier y AdaBoostClassifier se llevó a cabo mediante GridSearchCV. 
+
+La mejora de los hiperparámetros para los modelos GradientBoostingClassifier y AdaBoostClassifier se llevó a cabo mediante __GridSearchCV.__ 
 Para el GradientBoostingClassifier, ajustamos hiperparámetros  como el número de estimadores, la tasa de aprendizaje y la profundidad máxima de los árboles. El mejor conjunto de hiperparámetros se validó utilizando la métrica ROC-AUC en el conjunto de prueba. Con el AdaBoostClassifier, también optimizamos el número de estimadores y la tasa de aprendizaje, evaluando el mejor modelo con la misma métrica ROC-AUC.
 
 <br>
 
 En el caso del GradientBoostingClasiffier la mejora tras la hiperparametrización
-ha sido notable, pasando de un  ROC-AUC de 0,81 a 0,85.
+ha sido notable, pasando de un  __ROC-AUC de 0,81 a 0,85__.
 
-<br>
 <br>
 <br>
 <div align="center">
@@ -169,10 +173,7 @@ Resulta interesante destacar la relativa menor relevancia de la variable 'viento
 <br>
 <br>
 
-------------
-<h2>
-  
-## Validación en el conjunto de datos reservado
+# Validación en el conjunto de datos reservado
 
 <br>
 
@@ -182,21 +183,21 @@ Resulta interesante destacar la relativa menor relevancia de la variable 'viento
 
   
 </div>
-Dado que el objetivo final del proyecto es hacer un sistema de predicción a tiempo real, reservamos del estrenamiento y testeo todos los datos  del año 2022, con el fin de evaluar la capacidad de gerenalizar del modelo. Los resultados fueron más bien decepcionantes, apenas mejorando un modelo dummie en el caso de la detección de positivos.
+
+Dado que el objetivo final del proyecto es hacer un sistema de predicción a tiempo real, reservamos del estrenamiento y testeo todos los __datos  del año 2022__, con el fin de evaluar la capacidad de gerenalizar del modelo. __Los resultados fueron más bien decepcionantes__, apenas mejorando un modelo dummie en el caso de la detección de positivos.
+
 <br>
+
 De cara a mejorar estos resultados, tomamos dos vías de acción:
 
-  - Por un lado, Al representar los datos en un mapa, pronto nos dimos cuenta que el modelo memorizaba el patrón de coordenadas y lo repetía de forma sistemática sin tener en cuenta otras variables. Así que procedimos a eliminar Longitud y Latitud del entrenamiento.
+  - Por un lado, Al representar los datos en un mapa, pronto nos dimos cuenta que el modelo memorizaba el patrón de coordenadas y lo repetía de forma sistemática sin tener en cuenta otras variables. Así que procedimos a __eliminar Longitud y Latitud del entrenamiento__.
   
-  - Y por otro decidimos probar a entrenar una red neuronal.
+  - Y por otro decidimos probar a entrenar una __red neuronal__.
 
 <br>
 <br>
 
-------------
-<h2>
-  
-## NDVI
+# NDVI
 
 <br>
 
@@ -206,15 +207,12 @@ De cara a mejorar estos resultados, tomamos dos vías de acción:
 
   
 </div>
-El problema de este enfoque es que se perdía la información geoespacial del modelo (No habría diferencia entre una gran ciudad o una masa de agua y un bosque). La manera de solucionar esto fue añadiendo una nueva variable que tuviese en cuenta la densidad de vegetación.
-El parámetro que elegimos fue  el NDVI (normalized difference vegetation index), que sin entrar en muchos detalles mide por satélite la cantidad de luz absorbida por la clorofila. 
-Obtuvimos el NDVI del Google Earth Engine que es un visor de datos satelitales con un amplio catálogo de datos. Entre ellos los necesarios para calcularlo.
+El problema de eliminar las coordenadas es que se perdía la información geoespacial del modelo (No habría diferencia entre una gran ciudad o una masa de agua y un bosque). La manera de solucionar esto fue añadiendo una nueva variable que tuviese en cuenta la densidad de vegetación.
+El parámetro que elegimos fue  el __NDVI (normalized difference vegetation index)__, que sin entrar en muchos detalles mide por satélite la cantidad de luz absorbida por la clorofila. 
+Obtuvimos el NDVI del __Google Earth Engine__ que es un visor de datos satelitales con un amplio catálogo de datos. Entre ellos los necesarios para calcularlo.
 <br>
 <br>
 
-------------
-<h2>
-  
 ## Red Neuronal
 
 <br>
@@ -225,8 +223,10 @@ Obtuvimos el NDVI del Google Earth Engine que es un visor de datos satelitales c
 
   
 </div>
-De cara a seguir mejorando nuestro proyecto probamos una red neuronal.
+
+De cara a seguir mejorando nuestro proyecto probamos una __red neuronal__.
 La arquitectura consta de dos capas densas con funciones activación ReLu y regularización L1, destinada a prevenir el sobreajuste. Se utiliza dropout para la regularización durante el entrenamiento. El modelo se compila con el optimizador Adam y la función de pérdida de entropía binaria. Se incorporan los callbaks EarlyStopping y ReduceLRonPlateau para mejorar la generalización y ajustar la tasa de aprendizaje.
+
 <br>
 <br>
 <br>
@@ -235,7 +235,8 @@ La arquitectura consta de dos capas densas con funciones activación ReLu y regu
   <img src="https://github.com/OscarDomPer/Incendios/blob/main/Im%C3%A1genes/hiperp.png?raw=true" width="80%">
 
 </div>
-Para la optimización de los hiperparámetros de la red usamos la web espicializada: Weights & Biases. Los resultados en el conjunto de pruebra no eran malos, pero no mejoraban al modelo anterior. Pero una vez más nuestro objetivo final es un sistema de predicción a tiempo real. Nos interesa que el modelo generalice bien, no que sea muy bueno prediciendo en el conjunto de prueba.
+
+Para la optimización de los hiperparámetros de la red usamos la web espicializada: __Weights & Biases__. Los resultados en el conjunto de pruebra no eran malos, pero no mejoraban al modelo anterior. Pero una vez más nuestro objetivo final es un sistema de predicción a tiempo real. __Nos interesa que el modelo generalice bien, no que sea muy bueno prediciendo en el conjunto de prueba__.
 <br>
 <br>
 <br>
@@ -244,9 +245,10 @@ Para la optimización de los hiperparámetros de la red usamos la web espicializ
   <img src="https://github.com/OscarDomPer/Incendios/blob/main/Im%C3%A1genes/resultados%20red.png?raw=true" width="80%">
 
 </div>
+
 Para ello pasamos el modelo por los datos del año 2022 que al igual que en el proyecto anterior, habían sido separados del los conjuntos de entrenamiento y prueba.
-Y en este caso el modelo funcionaba incluso mejor pasando de un 77% de nuestro modelo grideado a un 79%
-Es decir el modelo generaliza mejor que ajusta.
+__Y en este caso el modelo funcionaba incluso mejor pasando de un 77% de nuestro modelo grideado a un 79%
+Es decir el modelo generaliza mejor que ajusta__.
 <br>
 <br>
 <br>
@@ -280,10 +282,11 @@ Algunos representan los resultado de predict con un umbral determinado otros  re
 <br>
 <br>
 
-------------
-<h2>
-  
+
+***
 ## Predicción a tiempo real
+****
+
 <br>
 
 <div align="center">
@@ -292,11 +295,11 @@ Algunos representan los resultado de predict con un umbral determinado otros  re
 
   
 </div>
-El fin último y más importante reto de nuestro proyecto, era crear un sistema de predicción de riesgo de incendio a tiempo real.
+
+__El fin último y más importante reto de nuestro proyecto, era crear un sistema de predicción de riesgo de incendio a tiempo real__.
 Para ello, obviamente, necesitábamos datos a tiempo real de las estaciones metereológicas (otra limitación del sistema anterior es que los datos climáticos eran una media de todo el día).
-Conseguimos acceder a los datos diez-minutales (aunque se suben con un retraso de una hora o dos)) de MeteoGalicia de forma automatizada.
+Conseguimos acceder a los __datos diez-minutales__ (aunque se suben con un retraso de una hora o dos)) de MeteoGalicia de forma automatizada.
 Una vez descargados los datos, filtramos las estaciones que recojan humedad foliar y humedad de suelo y nos quedamos con las variables que nos interesan.
-<br>
 <br>
 <br>
 <div align="center">
@@ -304,7 +307,8 @@ Una vez descargados los datos, filtramos las estaciones que recojan humedad foli
   <img src="https://github.com/OscarDomPer/Incendios/blob/main/Im%C3%A1genes/mapas5.png?raw=true" width="80%">
 
 </div>
-Hacia el final de nuestro proyecto descubrimos que la Xunta tiene una herramienta similar a nuestro modelo, no ofrece mucha información acerca de cómo calcula el índice, o las variables que tiene en cuenta, pero nos sirve para compararlo con nuestro sistema.
+
+Hacia el final de nuestro proyecto descubrimos que la __Xunta tiene una herramienta similar__ a nuestro modelo, no ofrece mucha información acerca de cómo calcula el índice, o las variables que tiene en cuenta, pero nos sirve para compararlo con nuestro sistema.
 
 El mapa es un jpg que se  sube cada día, generalmente a las 9:45. 
 <br>
@@ -317,7 +321,8 @@ El mapa es un jpg que se  sube cada día, generalmente a las 9:45.
 </div>
 Con las variables climáticas a tiempo real, creamos un dataset con coordenadas aleatorias de forma análoga a lo que hicimos con los datos de un día concreto de nuestro dataset y le pasamos nuestro modelo.
 
-Si nos fijamos en el patrón, no tanto en los colores que obedecen al umbral con el que trabajamos o los rangos de probabilidad que elegimos, observamos cierta consistencia con el índice de la Xunta de Galicia. Lo que nos hace pensar que las decisiones que tomamos a lo largo de todo el proyecto fueron correctas en su mayoría.
+Si nos fijamos en el patrón, no tanto en los colores que obedecen al umbral con el que trabajamos o los rangos de probabilidad que elegimos, observamos cierta consistencia con el índice de la Xunta de Galicia. __Lo que nos hace pensar que las decisiones que tomamos a lo largo de todo el proyecto fueron correctas en su mayoría__.
+
 <br>
 <br>
 <br>
