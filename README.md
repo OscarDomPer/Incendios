@@ -44,7 +44,7 @@ Usar este modelo para hacer predicciones con __datos a tiempo real__.
 
 <br>
   
-### Obtención del registro de incendios
+### Obtención de los datos
 
 <br>
 
@@ -57,17 +57,16 @@ Usar este modelo para hacer predicciones con __datos a tiempo real__.
   <br>
   
 Para generar un dataset completo necesitábamos por un lado, un registro de incendios en Galicia y por otro conocer las condiciones climáticas en las que se dió cada incendio. 
-Los incendios los obtuvimos de la plataforma de la NASA 
+Los incendios los obtuvimos de la plataforma de la __NASA__ 
 [firms](https://firms.modaps.eosdis.nasa.gov/) 
-que proporciona datos satelitales, reuniendo datos de incendios en España pertenecientes a los últimos 15 años.
-Las variables climáticas se descargaron del servicio metereológico gallego 
+que proporciona datos satelitales, reuniendo datos de incendios en España pertenecientes a los __últimos 15 años__.
+Las variables climáticas se descargaron del __servicio metereológico gallego__. 
 [MeteoGalicia](https://www.meteogalicia.gal/web/home)
 
 <br>
 <br>
-<br>
   
-### Obtención de las variables climáticas y ensamblaje del dataset
+### Ensamblaje del dataset
 
 <br>
 
@@ -76,11 +75,12 @@ Las variables climáticas se descargaron del servicio metereológico gallego
   <img src="https://github.com/OscarDomPer/Incendios/blob/main/Im%C3%A1genes/ensamblaje.png?raw=true" width="100%">
   
 </div>
-Selecionamos 16 estaciones meteorológicas en Galicia, cuatro por provincia. El criterio para esta elección fue doble: la capacidad de las estaciones para registrar humedad del suelo y foliar, y una distribución geográfica que abarcara de forma amplia la región.
 
-Para la recopilación de datos sobre incendios, empleamos un proceso de localización inversa, identificando así los incendios ocurridos en Galicia. Luego, asociamos a cada incendio los datos climáticos registrados por la estación meteorológica más cercana en la fecha del evento. 
+Selecionamos __16 estaciones meteorológicas en Galicia__, cuatro por provincia. El criterio para esta elección fue doble: la capacidad de las estaciones para registrar __humedad del suelo y foliar__, y una distribución geográfica que abarcara de forma amplia la región.
 
-Finalmente, al tratarse de un problema de clasificación, generamos filas negativas en el dataset. Utilizamos la librería 'random' para crear coordenadas y fechas aleatorias dentro de nuestros límites temporales y territoriales. A estas coordenadas, les adjuntamos los datos climáticos correspondientes de la estación meteorológica más cercana.
+Para la recopilación de datos sobre incendios, empleamos un proceso de __localización inversa__, identificando así los incendios ocurridos en Galicia. Luego, asociamos a cada incendio los datos climáticos registrados por la estación meteorológica más cercana en la fecha del evento. 
+
+Finalmente, al tratarse de un problema de clasificación, __generamos filas negativas__ en el dataset. Utilizamos la librería 'random' para crear coordenadas y fechas aleatorias dentro de nuestros límites temporales y territoriales. A estas coordenadas, les adjuntamos los datos climáticos correspondientes de la estación meteorológica más cercana.
 
   <br>
 
@@ -92,10 +92,7 @@ https://github.com/OscarDomPer/Incendios/blob/main/001.Union_y_ajustes_DataSet_I
 <br>
 <br>
 
-------------
-<h2>
-  
-## Análisis Exploratorio de los datos
+### Análisis Exploratorio de los datos
 
 <br>
 
@@ -105,7 +102,7 @@ https://github.com/OscarDomPer/Incendios/blob/main/001.Union_y_ajustes_DataSet_I
 
   
 </div>
-Una vez realizados los ajustes básicos(sustitución de datos faltantes utilizando k-nearest neighbors, eliminación de outliers), al calcular la matriz de correlación para las variables numéricas de nuestro dataset, encontramos una correlación casi perfecta con algunos datos satelitales, como “Brightness” o “Scan”. Esta alta correlación se debe a que el satélite en sí actúa como un sistema de detección de incendios. Así que optamos por eliminarlos. 
+Una vez realizados los ajustes básicos(sustitución de datos faltantes utilizando k-nearest neighbors, eliminación de outliers), al calcular la matriz de correlación para las variables numéricas de nuestro dataset, encontramos una correlación casi perfecta con algunos datos satelitales, como “Brightness” o “Scan”. Esta alta correlación se debe a que el satélite en sí actúa como un sistema de detección de incendios. __Así que optamos por eliminarlo__s. 
 
 <br>
 <br>
@@ -116,11 +113,11 @@ Una vez realizados los ajustes básicos(sustitución de datos faltantes utilizan
   
 </div>
 
-Gráfica 1: Distribución Mensual de Incendios en cada Año. Se observa una mayor frecuencia en los meses de más calor, como era de esperar.
+-__Gráfica 1__: Distribución Mensual de Incendios en cada Año. Se observa una mayor frecuencia en los meses de más calor, como era de esperar.
 <br>
-Gráfica 2: Incendios Según la Hora del Día. Muestra una distribución inusual, debido a que los datos son recogidos por satélites de órbita corta que pasan varias veces al día por el mismo punto.
+-__Gráfica 2__: Incendios Según la Hora del Día. Muestra una distribución inusual, debido a que los datos son recogidos por satélites de órbita corta que pasan varias veces al día por el mismo punto.
 <br>
-Gráfica 3: Comparativa de Variables Climáticas. Al comparar la media de variables climáticas durante eventos de incendio y no incendio, como era de esperar,  el viento y la temperatura elevada están asociados con la ocurrencia de incendios, mientras que una mayor humedad, en todas sus formas, se relaciona con una menor frecuencia de estos eventos. 
+-__Gráfica 3__: Comparativa de Variables Climáticas. Al comparar la media de variables climáticas durante eventos de incendio y no incendio, como era de esperar,  el viento y la temperatura elevada están asociados con la ocurrencia de incendios, mientras que una mayor humedad, en todas sus formas, se relaciona con una menor frecuencia de estos eventos. 
 
 <br>
 <br>
