@@ -180,7 +180,7 @@ propagación de incendios, la intensidad del viento tiende a incrementarse signi
 <br>
 <br>
 
-# Validación en el conjunto de datos reservado
+### Validación en el conjunto de datos reservado
 
 <br>
 
@@ -206,7 +206,7 @@ __De cara a mejorar estos resultados__, tomamos dos vías de acción:
 <br>
 <br>
 
-# NDVI
+### NDVI
 
 <br>
 
@@ -223,7 +223,7 @@ Obtuvimos el NDVI del __Google Earth Engine__ que es un visor de datos satelital
 <br>
 <br>
 
-## Red Neuronal
+### Red Neuronal
 
 <br>
 
