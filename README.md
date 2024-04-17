@@ -24,7 +24,7 @@
 
 
 
-<h2>
+
   
 ## Introducción
 <br>
@@ -42,9 +42,9 @@ Usar este modelo para hacer predicciones con __datos a tiempo real__.
 ## Fase 1: Creación del dataset
 ------------
 
-
+<br>
   
-### Obtención de los datos
+### Obtención del registro de incendios
 
 <br>
 
@@ -65,6 +65,10 @@ Las variables climáticas se descargaron del servicio metereológico gallego
 
 <br>
 <br>
+<br>
+  
+### Obtención de las variables climáticas y ensamblaje del dataset
+
 <br>
 
 <div align="center">
