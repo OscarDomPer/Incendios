@@ -143,7 +143,7 @@ https://github.com/OscarDomPer/Incendios/blob/main/002.EDA_datos_Galicia.ipynb
 <br>
 
 ------------
-## Desarrollo del modelo de Machine Learning
+## Fase 2: Desarrollo del modelo de Machine Learning
 ------------
 <br>
 
@@ -312,7 +312,7 @@ https://github.com/OscarDomPer/Incendios/blob/main/006.NDVI.ipynb
 <br>
 <br>
 ***
-## Predicción a tiempo real
+## Fase 3: Predicción a tiempo real
 ****
 
 <br>
