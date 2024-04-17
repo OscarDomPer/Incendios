@@ -35,13 +35,17 @@ __Creación del dataset__ donde obtenemos y estructuramos datos de incendios en 
 Entrenar y evaluar el funcionamiento de un modelo de __Machine Learning__.
 Usar este modelo para hacer predicciones con __datos a tiempo real__.
 
+<br>
+<br>
+<br>
+
 ****
 ## Fase 1: Creación del dataset
 ------------
 
 <h2>
   
-# Obtención de los datos
+### Obtención de los datos
 
 <br>
 
