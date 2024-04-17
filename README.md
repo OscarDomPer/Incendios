@@ -33,15 +33,9 @@
 ![Imbalanced-learn](https://img.shields.io/badge/-Imbalanced_learn-5D4037?style=flat&logo=imbalanced-learn&logoColor=white)
 ![tqdm](https://img.shields.io/badge/-tqdm-6A1B9A?style=flat&logo=tqdm&logoColor=white)
 
-
-
 <br>
 <br>
 
-
-
-
-  
 ## Introducción
 <br>
 
