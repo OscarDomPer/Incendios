@@ -20,18 +20,19 @@
 
 **Librerías:**
 ![Pandas](https://img.shields.io/badge/-Pandas-150458?style=flat&logo=pandas&logoColor=white)
-![Geopandas](https://img.shields.io/badge/-Geopandas-150458?style=flat&logo=geopandas&logoColor=white)
-![Geopsy](https://img.shields.io/badge/-Geopsy-150458?style=flat&logo=geopsy&logoColor=white)
-![Folium](https://img.shields.io/badge/-Folium-150458?style=flat&logo=folium&logoColor=white)
-![TensorFlow](https://img.shields.io/badge/-TensorFlow-150458?style=flat&logo=tensorflow&logoColor=white)
-![Requests](https://img.shields.io/badge/-Requests-000000?style=flat&logo=requests&logoColor=white)
+![Geopandas](https://img.shields.io/badge/-Geopandas-7D629F?style=flat&logo=geopandas&logoColor=white)
+![Geopsy](https://img.shields.io/badge/-Geopsy-478559?style=flat&logo=geopsy&logoColor=white)
+![Folium](https://img.shields.io/badge/-Folium-F6993F?style=flat&logo=folium&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/-TensorFlow-FF6F00?style=flat&logo=tensorflow&logoColor=white)
+![Requests](https://img.shields.io/badge/-Requests-AC3B61?style=flat&logo=requests&logoColor=white)
 ![Shapely](https://img.shields.io/badge/-Shapely-5F9EA0?style=flat&logo=shapely&logoColor=white)
-![Joblib](https://img.shields.io/badge/-Joblib-150458?style=flat&logo=joblib&logoColor=white)
-![Scikit-learn](https://img.shields.io/badge/-Scikit_learn-150458?style=flat&logo=scikit-learn&logoColor=white)
-![Matplotlib](https://img.shields.io/badge/-Matplotlib-3776AB?style=flat&logo=matplotlib&logoColor=white)
-![Seaborn](https://img.shields.io/badge/-Seaborn-3776AB?style=flat&logo=seaborn&logoColor=white)
-![Imbalanced-learn](https://img.shields.io/badge/-Imbalanced_learn-3776AB?style=flat&logo=imbalanced-learn&logoColor=white)
-![tqdm](https://img.shields.io/badge/-tqdm-3776AB?style=flat&logo=tqdm&logoColor=white)
+![Joblib](https://img.shields.io/badge/-Joblib-4285F4?style=flat&logo=joblib&logoColor=white)
+![Scikit-learn](https://img.shields.io/badge/-Scikit_learn-FBC02D?style=flat&logo=scikit-learn&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/-Matplotlib-388E3C?style=flat&logo=matplotlib&logoColor=white)
+![Seaborn](https://img.shields.io/badge/-Seaborn-0277BD?style=flat&logo=seaborn&logoColor=white)
+![Imbalanced-learn](https://img.shields.io/badge/-Imbalanced_learn-5D4037?style=flat&logo=imbalanced-learn&logoColor=white)
+![tqdm](https://img.shields.io/badge/-tqdm-6A1B9A?style=flat&logo=tqdm&logoColor=white)
+
 
 
 <br>
