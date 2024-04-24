@@ -256,7 +256,7 @@ La arquitectura consta de dos capas densas con funciones activación ReLu y regu
 
 </div>
 
-Para la optimización de los hiperparámetros de la red usamos la web espicializada: __Weights & Biases__. Los resultados en el conjunto de pruebra no eran malos, pero no mejoraban al modelo anterior. Pero una vez más nuestro objetivo final es un sistema de predicción a tiempo real. __Nos interesa que el modelo generalice bien, no que sea muy bueno prediciendo en el conjunto de prueba__.
+Para la optimización de los hiperparámetros de la red usamos la web especializada: __Weights & Biases__. Los resultados en el conjunto de pruebra no eran malos, pero no mejoraban al modelo anterior. Pero una vez más nuestro objetivo final es un sistema de predicción a tiempo real. __Nos interesa que el modelo generalice bien, no que sea muy bueno prediciendo en el conjunto de prueba__.
 <br>
 <br>
 <br>
