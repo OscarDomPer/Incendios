@@ -201,7 +201,7 @@ propagación de incendios, la intensidad del viento tiende a incrementarse signi
   
 </div>
 
-Dado que el objetivo final del proyecto es hacer un sistema de predicción a tiempo real, reservamos del estrenamiento y testeo todos los __datos  del año 2022__, con el fin de evaluar la capacidad de gerenalizar del modelo. __Los resultados fueron más bien decepcionantes__, apenas mejorando un modelo dummie en el caso de la detección de positivos.
+Dado que el objetivo final del proyecto es hacer un sistema de predicción a tiempo real, reservamos del entrenamiento y testeo todos los __datos  del año 2022__, con el fin de evaluar la capacidad de gerenalizar del modelo. __Los resultados fueron más bien decepcionantes__, apenas mejorando un modelo dummie en el caso de la detección de positivos.
 
 <br>
 <br>
